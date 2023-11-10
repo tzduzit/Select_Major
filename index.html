@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Select a Major</title>
+
+  <!-- Handlebar src -->
   <script src="https://cdnjs.cloudfare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
+
+  <!-- Bootsrap -->
   <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -11,16 +15,18 @@
   <style> .btn{margin: 5px} </style>
 </head>
 <body>
- <!-- BUTTONS -->
+ 
+  <!-- BUTTONS -->
   <div class="container">
-  <h2>Select a Major</h2>
+    <h2>Select a Major</h2>
+    
+    <div style='padding: 5px;'>
+      <button type=''button' class="btn-primary" onClick="getData('CIT')">CIT</button>
+      <button type=''button' class="btn-primary" onClick="getData('BUS')">BUS</button>
+    </div>
 
-  <div style='padding: 5px;'>
-    <button type=''button' class="btn-primary" onClick="getData('CIT')">CIT</button>
-    <button type=''button' class="btn-primary" onClick="getData('BUS')">BUS</button>
+    <div id="studentTable"></div>
   </div>
-
-  <div id="studentTable"></div>
 
 <!-- Handlebars template -->
 <script type="text/x-handlebars-template" id="tableTemplate">
@@ -33,8 +39,6 @@
     {{/each}}
   </table>
 </script>
-
-
 
 <script src = 'app.js'></script>
 </body></html>
