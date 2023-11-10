@@ -17,7 +17,7 @@
     <tr><th>Name</th><th>Major</th><th>Midterm</th><th>Final</th></tr>
     {{#each rows}}
       <tr>
-        <>{{name}}</td><td>{{major}}</td><td>{{midterm}}</td><td>{{final}}</td>
+        <td>{{name}}</td><td>{{major}}</td><td>{{midterm}}</td><td>{{final}}</td>
       </tr>
     {{/each}}
   </table>
@@ -29,4 +29,13 @@
     var response = await fetch(url);
     if(response.ok) {
         var data = await response.json();
+
+        var templateText = document.getElementById('tableTemplate').innerHTML;
+        var compiledTemplateText = Handlebars.compile(templateText);
+        compiledHtml = compiledTemplateText({ rows: data })
+        document.getElementById('studentTable').innerHTML = compiledHtml;
+    }
+    else {
+         document.querySelector('#studentTable').innerHTML = "Data not found"
+    }
 </script>
