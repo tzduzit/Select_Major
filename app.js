@@ -1,9 +1,10 @@
-<script>
-  window.onlaod = async.function() {
-    var url = "cit5students.json";
-    var response = await fetch(url);
+async function getData(selected_major) {
+    var response = await fetch('cit5students.json');
     if(response.ok) {
         var data = await response.json();
+
+        // filter data //
+        majors = data.filter( (item) => item.major == selected_major );
 
         var templateText = document.getElementById('tableTemplate').innerHTML;
         var compiledTemplateText = Handlebars.compile(templateText);
@@ -14,4 +15,3 @@
          document.querySelector('#studentTable').innerHTML = "Data not found";
     }
   }
-</script>
