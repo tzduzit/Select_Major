@@ -7,9 +7,16 @@
 </head>
 
 <body>
+ <!-- BUTTONS -->
+  <div class="container">
   <h2>Select a Major</h2>
-   <div id="studentTable"></div>
-</body>
+
+  <div style='padding: 5px;'>
+    <button type=''button' class="btn-primary" onClick="getData('CIT')">CIT</button>
+    <button type=''button' class="btn-primary" onClick="getData('BUS')">BUS</button>
+  </div>
+
+  <div id="studentTable"></div>
 
 <!-- Handlebars template -->
 <script type="text/x-handlebars-template" id="tableTemplate">
@@ -23,23 +30,7 @@
   </table>
 </script>
 
-<script>
-  window.onlaod = async.function() {
-    var url = "cit5students.json";
-    var response = await fetch(url);
-    if(response.ok) {
-        var data = await response.json();
-
-        var templateText = document.getElementById('tableTemplate').innerHTML;
-        var compiledTemplateText = Handlebars.compile(templateText);
-        compiledHtml = compiledTemplateText({ rows: data })
-        document.getElementById('studentTable').innerHTML = compiledHtml;
-    }
-    else {
-         document.querySelector('#studentTable').innerHTML = "Data not found";
-    }
-  }
-</script>
-</html>
 
 
+
+</body>
