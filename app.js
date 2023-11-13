@@ -5,12 +5,9 @@ async function getData(selected_major) {
     if(response.ok) {
         var data = await response.json();
 
-        // filter data //
-        //major_choices = data.filter( (item) => Name.major == selected_major );
-        major_choices = [] // new array to hold filtered data
-        for(i=0, i < data.length; i++) {
-            if(data[i].major == selected_major) {major_choices.push(data[i].major);}}
-        
+       // filter data //
+       major_choices = data.filter( (item) => Name.major == selected_major );
+               
        var templateText = document.getElementById('tableTemplate').innerHTML;
        var compiledTemplateText = Handlebars.compile(templateText);
        compiledHtml = compiledTemplateText({ rows: major_choices })
