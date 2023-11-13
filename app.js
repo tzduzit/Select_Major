@@ -6,11 +6,11 @@ async function getData(selected_major) {
         var data = await response.json();
 
         // filter data //
-        majors = data.filter( (item) => item.major == selected_major );
+        major_choices = data.filter( (item) => item.major == selected_major );
 
         var templateText = document.getElementById('tableTemplate').innerHTML;
         var compiledTemplateText = Handlebars.compile(templateText);
-        compiledHtml = compiledTemplateText({ rows: majors })
+        compiledHtml = compiledTemplateText({ rows: major_choices })
         document.getElementById('studentTable').innerHTML = compiledHtml;
     }
     else {
