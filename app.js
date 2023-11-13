@@ -7,9 +7,9 @@ async function getData(selected_major) {
 
         // filter data //
         //major_choices = data.filter( (item) => Name.major == selected_major );
-major_choices = [] // new array to hold filtered data
-for(i=0, i < data.length; i++) {
-    if(data[i].major == selected_major) {major_choices.push(data[i].major);}}
+        major_choices = [] // new array to hold filtered data
+        for(i=0, i < data.length; i++) {
+            if(data[i].major == selected_major) {major_choices.push(data[i].major);}}
         
        var templateText = document.getElementById('tableTemplate').innerHTML;
        var compiledTemplateText = Handlebars.compile(templateText);
