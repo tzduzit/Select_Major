@@ -6,7 +6,7 @@ async function getData(selected_major) {
         var data = await response.json();
 
        // filter data //
-       major_choices = data.filter( (name) => Name.major == selected_major );
+       major_choices = data.filter( (Name) => Name.major == selected_major );
                
        var templateText = document.getElementById('tableTemplate').innerHTML;
        var compiledTemplateText = Handlebars.compile(templateText);
