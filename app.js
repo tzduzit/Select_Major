@@ -13,7 +13,7 @@ async function getData(selected_major) {
         document.getElementById('studentTable').innerHTML = compiledHtml;
     }
     else {
-         document.querySelector('#studentTable').innerHTML = "Data not found";
+        document.querySelector('#studentTable').innerHTML = "Data not found";
     }
   }
     </script>
