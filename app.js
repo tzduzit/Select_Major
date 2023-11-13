@@ -1,6 +1,7 @@
 <script>
 async function getData(selected_major) {
     var response = await fetch('cit5students.json');
+    
     if(response.ok) {
         var data = await response.json();
 
