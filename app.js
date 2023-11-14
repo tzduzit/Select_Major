@@ -1,4 +1,3 @@
-<script>
 async function getData(selected_major) {
     var response = await fetch('cit5students.json');
     
@@ -17,4 +16,3 @@ async function getData(selected_major) {
         document.querySelector('#studentTable').innerHTML = "Data not found";
     }
   }
-    </script>
